@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen font-sans text-[15px] leading-relaxed text-brand-800 antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-brand-200/80 text-brand-900;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-400 ring-offset-2 ring-offset-brand-50;
+  }
+}
+
+@layer components {
+  .card-surface {
+    @apply rounded-[1.35rem] border border-[rgba(28,25,23,0.13)] bg-gradient-to-b from-white/[0.99] to-white/[0.92] backdrop-blur-[3px] will-change-transform transition-[box-shadow,border-color,transform] duration-300 ease-out;
+    box-shadow:
+      0 1px 0 rgba(20, 18, 16, 0.06),
+      0 12px 32px -10px rgba(20, 18, 16, 0.09),
+      inset 0 1px 0 rgba(255, 255, 255, 0.95),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  }
+
+  .card-surface--hover:hover {
+    @apply border-brand-300/90;
+    box-shadow:
+      0 1px 0 rgba(20, 18, 16, 0.07),
+      0 22px 48px -14px rgba(20, 18, 16, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 1),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
+  }
+
+  /* Верхняя метка + нижняя зона действия — ощущение «системы», не сетки */
+  .card-editorial-top {
+    @apply mb-6 h-px w-10 bg-gradient-to-r from-warm-deep/50 to-transparent;
+  }
+
+  .card-editorial-actions {
+    @apply mt-auto border-t border-[rgba(28,25,23,0.08)] pt-6;
+  }
+
+  .section-pad {
+    @apply py-24 sm:py-28 lg:py-32;
+  }
+
+  /* Ритм внутренних страниц: стеклянный «лифт» и более глубокий промежуточный слой.
+     Градиенты — plain CSS: в @apply кастомные bg-section-* из theme не резолвятся PostCSS. */
+  .page-section-lift {
+    @apply relative border-y border-[rgba(28,25,23,0.08)] py-20 backdrop-blur-[10px] sm:py-24;
+    background-image: linear-gradient(
+      168deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(252, 250, 247, 0.82) 42%,
+      rgba(237, 230, 219, 0.48) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.65),
+      inset 0 0 80px rgba(255, 255, 255, 0.15);
+  }
+
+  .page-section-depth {
+    @apply relative py-20 sm:py-24;
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(228, 220, 208, 0.42) 0%,
+        rgba(252, 250, 247, 0.58) 48%,
+        rgba(255, 255, 255, 0.78) 100%
+      ),
+      radial-gradient(ellipse 120% 80% at 50% -20%, rgba(31, 28, 25, 0.055) 0%, transparent 55%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  }
+
+  .page-section-quiet {
+    @apply relative py-20 sm:py-24;
+  }
+
+  .prose h1 {
+    @apply mb-6 mt-0;
+  }
+
+  .prose h2 {
+    @apply mb-4 mt-10;
+  }
+
+  .prose ul {
+    @apply my-4 list-disc pl-6;
+  }
+
+  .prose p {
+    @apply my-3;
+  }
+}
