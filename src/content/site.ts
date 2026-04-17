@@ -30,8 +30,8 @@ export const footerData = {
   disclaimer:
     'Информация на сайте носит справочный характер и не является индивидуальной инвестиционной рекомендацией, публичной офертой или гарантией доходности.',
   contacts: {
-    email: 'info@cbi-invest.ru',
-    telegram: '@cbi_invest',
-    phone: '+7 (___) ___-__-__',
+    email: 'e.u.bocharowa@yandex.ru',
+    telegram: '@CENTR_BIZNES_INVEST',
+    phone: '+7 (910) 943-44-22',
   },
 };

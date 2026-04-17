@@ -39,14 +39,20 @@ export default function ContactsPage() {
 
               <div className="card-surface mt-10 border-brand-200/80 bg-gradient-to-br from-brand-50 to-paper-50/80 p-6">
                 <p className="text-sm font-medium text-brand-800">Прямой контакт</p>
-                <a
-                  href={d.telegram.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 inline-block text-sm font-medium text-brand-700 underline underline-offset-2 hover:text-brand-900"
-                >
-                  {d.telegram.label}
-                </a>
+                <div className="mt-4 space-y-3">
+                  {d.directContacts.map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      target={item.href.startsWith('http') ? '_blank' : undefined}
+                      rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="block text-sm text-brand-700 transition-colors hover:text-brand-900"
+                    >
+                      <span className="mr-2 text-brand-500">{item.label}:</span>
+                      <span className="font-medium underline underline-offset-2">{item.value}</span>
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
 

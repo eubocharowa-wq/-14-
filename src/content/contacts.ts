@@ -7,10 +7,18 @@ export const contactsPageData = {
   },
   startInfo: {
     title: 'Что полезно указать на старте',
-    items: ['Город', 'Тип недвижимости', 'Бюджет', 'Цель', 'Срок решения'],
+    items: [
+      'Город и тип недвижимости',
+      'Бюджет и источник средств',
+      'Цель и горизонт решения',
+      'Что уже есть из документов',
+      'Какие риски хотите снять на старте',
+    ],
   },
-  telegram: {
-    label: 'Написать в Telegram',
-    href: 'https://t.me/cbi_invest',
-  },
+  directContacts: [
+    { label: 'Телефон', value: '+7 (910) 943-44-22', href: 'tel:+79109434422' },
+    { label: 'Email', value: 'e.u.bocharowa@yandex.ru', href: 'mailto:e.u.bocharowa@yandex.ru' },
+    { label: 'Telegram (ЦБИ)', value: '@CENTR_BIZNES_INVEST', href: 'https://t.me/CENTR_BIZNES_INVEST' },
+    { label: 'Telegram (Елена)', value: '@ELENA_BOCHAROWA', href: 'https://t.me/ELENA_BOCHAROWA' },
+  ],
 };
