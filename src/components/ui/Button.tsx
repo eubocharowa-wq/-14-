@@ -16,7 +16,9 @@ interface ButtonAsLink extends ButtonBaseProps {
   onClick?: never;
 }
 
-interface ButtonAsButton extends ButtonBaseProps, Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
+interface ButtonAsButton
+  extends ButtonBaseProps,
+    Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className' | 'children'> {
   href?: never;
 }
 

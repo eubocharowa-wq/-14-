@@ -18,7 +18,7 @@ import NotFoundPage from '@/pages/NotFoundPage';
 export default function App() {
   return (
     <HelmetProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<HomePage />} />
